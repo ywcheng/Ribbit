@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest package="com.hqetpe.ribbit"
           xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 
     <!--
       IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
       to match your app's package name + ".permission.C2D_MESSAGE".
     -->
-    <permission android:protectionLevel="signature"
-                android:name="com.parse.starter.permission.C2D_MESSAGE" />
-    <uses-permission android:name="com.parse.starter.permission.C2D_MESSAGE" />
+    <permission
+        android:name="com.parse.starter.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
 
-    <service android:name="com.parse.PushService" />
-    <receiver android:name="com.parse.ParsePushBroadcastReceiver"
-              android:exported="false">
+    <uses-permission android:name="com.parse.starter.permission.C2D_MESSAGE"/>
+
+    <service android:name="com.parse.PushService"/>
+
+    <receiver
+        android:name="com.parse.ParsePushBroadcastReceiver"
+        android:exported="false">
         <intent-filter>
-            <action android:name="com.parse.push.intent.RECEIVE" />
-            <action android:name="com.parse.push.intent.DELETE" />
-            <action android:name="com.parse.push.intent.OPEN" />
+            <action android:name="com.parse.push.intent.RECEIVE"/>
+            <action android:name="com.parse.push.intent.DELETE"/>
+            <action android:name="com.parse.push.intent.OPEN"/>
         </intent-filter>
     </receiver>
-    <receiver android:name="com.parse.GcmBroadcastReceiver"
-              android:permission="com.google.android.c2dm.permission.SEND">
+    <receiver
+        android:name="com.parse.GcmBroadcastReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND">
         <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+            <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
 
-            <!--
-              IMPORTANT: Change "com.parse.starter" to match your app's package name.
-            -->
-            <category android:name="com.parse.starter" />
+            <!--               IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+            <category android:name="com.parse.starter"/>
         </intent-filter>
     </receiver>
 
     <application
+        android:name=".RibbitApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".RibbitApplication">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -56,6 +58,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -68,23 +71,37 @@
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
-            android:parentActivityName="com.hqetpe.ribbit.LoginActivity"
+            android:parentActivityName=".LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <!-- ATTENTION: This intent was auto-generated. Follow instructions at
-      https://g.co/AppIndexing/AndroidStudio to publish your Android app deep links. -->
+
+            <!--
+      ATTENTION: This intent was auto-generated. Follow instructions at
+      https://g.co/AppIndexing/AndroidStudio to publish your Android app deep links.
+            -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <!-- ATTENTION: This data URL was auto-generated. We recommend that you use the HTTP scheme.
-                  TODO: Change the host or pathPrefix as necessary. -->
+                <!--
+                  ATTENTION: This data URL was auto-generated. We recommend that you use the HTTP scheme.
+                  TODO: Change the host or pathPrefix as necessary.
+                -->
                 <data
                     android:host="ribbit.hqetpe.com"
                     android:pathPrefix="/signup"
                     android:scheme="http"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".EditFriendsActivity"
+            android:label="@string/title_activity_edit_friends"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hqetpe.ribbit.MainActivity"/>
         </activity>
     </application>
 
