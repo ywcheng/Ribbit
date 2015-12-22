@@ -15,11 +15,10 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentBottom="false"/>
+        android:choiceMode="multipleChoice"
+        />
+
 </RelativeLayout>
