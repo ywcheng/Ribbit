@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                     }else{
                         videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
                         videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);//10 mb
-                        videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); //lowest quality; TODO: fix video taking weirdness 
+                        videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); //lowest quality; TODO: fix video taking weirdness
                         startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
                     }
                     break;
