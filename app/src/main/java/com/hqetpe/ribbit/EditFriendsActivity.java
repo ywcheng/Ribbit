@@ -23,10 +23,13 @@ import java.util.List;
 
 public class EditFriendsActivity extends AppCompatActivity {
     public static final String TAG = EditFriendsActivity.class.getSimpleName();
-    protected List<ParseUser> mUsers;
+
     protected ListView mListView;
     protected ParseRelation<ParseUser> mFriendsRelation;
     protected ParseUser mCurrentUser;
+    protected List<ParseUser> mUsers;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +93,7 @@ public class EditFriendsActivity extends AppCompatActivity {
                     int i = 0;
                     for (ParseUser user : mUsers) {
                         //if(!user.getObjectId().equals(mCurrentUser.getObjectId()))
-                            usernames[i] = user.getUsername();
+                        usernames[i] = user.getUsername();
                         i++;
                     }
 
@@ -116,15 +119,15 @@ public class EditFriendsActivity extends AppCompatActivity {
         mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
             @Override
             public void done(List<ParseUser> friends, ParseException e) {
-                if(e == null){
-                    for(int i = 0; i < mUsers.size(); i++){
+                if (e == null) {
+                    for (int i = 0; i < mUsers.size(); i++) {
                         ParseUser user = mUsers.get(i);
-                        for(ParseUser friend : friends){
-                            if(friend.getObjectId().equals(user.getObjectId()))
+                        for (ParseUser friend : friends) {
+                            if (friend.getObjectId().equals(user.getObjectId()))
                                 mListView.setItemChecked(i, true);
                         }
                     }
-                }else Log.e(TAG, e.getMessage());
+                } else Log.e(TAG, e.getMessage());
 
             }
         });
