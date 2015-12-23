@@ -3,12 +3,19 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.hqetpe.ribbit.MainActivity">
     <item
-        android:id="@+id/action_logout"
-        android:orderInCategory="100"
-        android:title="@string/menu_logout_label"
-        app:showAsAction="never"/>
+        android:id="@+id/action_camera"
+        android:icon="@drawable/ic_action_camera"
+        android:showAsAction="always"
+        android:title="@string/menu_camera_label">
+    </item>
     <item
         android:id="@+id/action_edit_friends"
         android:title="Edit Friends"
         />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/menu_logout_label"
+        app:showAsAction="never"/>
+
 </menu>
