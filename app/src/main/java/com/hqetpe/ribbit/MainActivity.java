@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                         Toast.makeText(MainActivity.this, R.string.error_external_storage, Toast.LENGTH_LONG).show();
                     }else{
                         videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
-                        videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);//10 mb
-                        videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); //lowest quality; TODO: fix video taking weirdness
+                        videoIntent.putExtra(MediaStore.EXTRA_SIZE_LIMIT, 20);//20 mb
+                        //videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0); //lowest quality; TODO: fix video taking weirdness
                         startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
                     }
                     break;
