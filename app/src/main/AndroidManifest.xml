@@ -11,7 +11,10 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-feature android:required="true" android:name="android.hardware.Camera"/>
+
+    <uses-feature
+        android:name="android.hardware.Camera"
+        android:required="true"/>
 
     <!--
       IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
@@ -41,7 +44,7 @@
             <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
             <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
 
-            <!--               IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+            <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
             <category android:name="com.parse.starter"/>
         </intent-filter>
     </receiver>
@@ -99,6 +102,16 @@
         <activity
             android:name=".EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hqetpe.ribbit.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".RecipientsActivity"
+            android:label="@string/title_activity_recipients"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
