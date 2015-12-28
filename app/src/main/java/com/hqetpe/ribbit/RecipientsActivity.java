@@ -99,7 +99,7 @@ public class RecipientsActivity extends AppCompatActivity {
 
                 }else{
                     send(message);
-                    finish();
+                    finish(); //end of a use case
                 }
                 return true;
         }
