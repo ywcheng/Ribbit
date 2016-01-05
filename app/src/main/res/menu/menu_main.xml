@@ -4,9 +4,15 @@
       tools:context="com.hqetpe.ribbit.MainActivity">
     <item
         android:id="@+id/action_camera"
-        android:icon="@drawable/ic_action_camera"
+        android:icon="@drawable/ic_action_picture"
         android:showAsAction="always"
         android:title="@string/menu_camera_label">
+    </item>
+    <item
+        android:id="@+id/action_message"
+        android:icon="@drawable/ic_action_picture"
+        android:showAsAction="always"
+        android:title="@string/menu_message_label">
     </item>
     <item
         android:id="@+id/action_edit_friends"

@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                         .setAction("Action", null).show();
             }
         });
+
     }
 
     @Override
@@ -238,13 +239,20 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
                 //return true;
                 ParseUser.logOut();
                 navigateToLogin();
+                break;
             case R.id.action_edit_friends:
                 Intent intent = new Intent(this, EditFriendsActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.action_message:
+                Intent messageIntent = new Intent(this, MessageActivity.class);
+                startActivity(messageIntent);
+                break;
             case R.id.action_camera:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setItems(R.array.camera_choices, mDialogListener);
                 builder.show();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

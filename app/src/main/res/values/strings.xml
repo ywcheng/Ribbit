@@ -33,4 +33,6 @@
     <string name="error_selecting_file_title">We\'re sorry!</string>
     <string name="success_message">Message send!</string>
     <string name="error_sending_message">There was an error sending your message. Please try again.</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="menu_message_label">Message</string>
 </resources>
